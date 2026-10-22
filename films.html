@@ -85,6 +85,7 @@ a{color:inherit}
 .reel-main .screen .play{width:76px;height:76px;margin:-38px 0 0 -38px}
 .film figcaption{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
 .film figcaption b{font-weight:500;font-size:16px}
+.film figcaption span a{color:var(--em);text-underline-offset:3px}
 .film figcaption span{font:500 10.5px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
 
 .back{display:flex;justify-content:center;padding:clamp(60px,8vw,100px) 0}
@@ -196,6 +197,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     fr.allow='autoplay; fullscreen; picture-in-picture';fr.allowFullscreen=true;
     fr.title=s.parentNode.querySelector('figcaption b').textContent;
     s.appendChild(fr);
+    /* a direct link as well, in case a browser or preview blocks the embed */
+    var cap=s.parentNode.querySelector('figcaption span');
+    cap.innerHTML='<a href="https://vimeo.com/'+s.dataset.v+'" target="_blank" rel="noopener">'+(LANG==='de'?'Auf Vimeo öffnen ↗':'Open on Vimeo ↗')+'</a>';cap.removeAttribute('data-kind');
   }
   screens.forEach(function(s){
     s.addEventListener('click',function(){play(s)});
