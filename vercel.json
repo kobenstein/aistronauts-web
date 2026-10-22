@@ -16,6 +16,11 @@
       "source": "/films",
       "destination": "/portfolio",
       "permanent": true
+    },
+    {
+      "source": "/legal-notice-privacy-policy",
+      "destination": "/#legal",
+      "permanent": true
     }
   ]
 }
