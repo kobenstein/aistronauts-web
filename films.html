@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Films · aistronauts · Jakob Schweighardt</title>
+<meta name="description" content="Brand films, spec ads and explainers by Jakob Schweighardt, AI Creative Producer and founder of aistronauts.">
+<link rel="canonical" href="https://aistronauts.at/films">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aistronauts.at/films">
+<meta property="og:title" content="Films · aistronauts · Jakob Schweighardt">
+<meta property="og:description" content="Brand films, spec ads and explainers by Jakob Schweighardt.">
+<meta property="og:image" content="https://aistronauts.at/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#07181A">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* Films: a dark aurora band with Jakob, the showreel large, then every film as a click-to-play card */
+:root{
+  --bg:#F3EEE3; --fg:#142B21; --ink:#142B21; --muted:#5E6B60; --navc:#5E6B60; --line:rgba(20,43,33,.14); --em:#2F6B4F;
+  --c1:#E2875C; --c2:#2F6B4F; --c3:#B9CFA6; --night:#07181A; --nem:#B4E8C8; --nfg:#F3EEE3; --nmuted:#C2CCBD;
+  --f-display:"Unbounded", system-ui, sans-serif;
+  --f-body:"Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"Geist Mono", ui-monospace, Menlo, monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:17px;line-height:1.6;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--night)}
+.wrap{max-width:1140px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;letter-spacing:-.035em;line-height:1.05;text-wrap:balance;margin:0}
+h1 em,h2 em{font-style:normal;color:var(--em)}
+a{color:inherit}
+.label{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+.top{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);z-index:5;padding-left:max(12px,env(safe-area-inset-left,0px));padding-right:max(12px,env(safe-area-inset-right,0px))}
+.top .bar{max-width:1140px;margin:0 auto;display:flex;align-items:center;gap:22px;padding:8px 8px 8px 22px;border-radius:999px;background:rgba(255,255,255,.78);border:1px solid rgba(16,38,28,.08);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:0 10px 30px rgba(16,38,28,.1);color:var(--ink)}
+.logo{font-family:var(--f-display);font-weight:400;font-size:18px;letter-spacing:-.04em;text-decoration:none;margin-right:auto}
+.nav{display:flex;gap:24px;font-size:14px;color:var(--navc)}
+.nav a{text-decoration:none} .nav a:hover,.nav a[aria-current]{color:var(--ink)}
+@media (max-width:640px){.nav{display:none}}
+.pill{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;padding:13px 22px;border-radius:999px;border:1.5px solid var(--fg);text-decoration:none;color:var(--fg);font-weight:500;font-size:15px}
+.pill.solid{background:var(--ink);color:#FAFAF6;border-color:var(--ink)}
+.pill.light{border-color:rgba(255,255,255,.55);color:var(--nfg)}
+.lang{display:flex;font:500 11px/1 var(--f-mono);letter-spacing:.08em;margin-right:-8px}
+.lang button{border:0;background:none;padding:8px 5px;color:var(--navc);cursor:pointer;font:inherit;letter-spacing:inherit}
+.lang button[aria-pressed="true"]{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+@media (max-width:640px){.top .bar{gap:8px;padding-left:16px}.lang{margin-right:0}.top .bar>.pill{padding-inline:14px}}
+
+/* night band behind the header, aurora painted with gradients */
+.intro{position:relative;margin-top:-76px;padding:clamp(140px,18vw,190px) 0 clamp(150px,16vw,200px);background:var(--night);color:var(--nfg);overflow:hidden;isolation:isolate}
+.intro::before{content:"";position:absolute;inset:-20% -10% 0;z-index:-1;filter:blur(40px);opacity:.9;
+  background:radial-gradient(40% 30% at 22% 70%,rgba(120,225,160,.55),transparent 70%),radial-gradient(35% 26% at 70% 60%,rgba(80,200,185,.35),transparent 70%),radial-gradient(30% 22% at 88% 78%,rgba(240,160,105,.3),transparent 70%)}
+.intro::after{content:"";position:absolute;left:-20%;right:-20%;bottom:-62vw;height:70vw;border-radius:50%;z-index:-1;
+  background:radial-gradient(closest-side,#24503A 92%,transparent 100%);box-shadow:0 -2px 0 rgba(180,232,200,.6),0 -30px 80px rgba(120,215,160,.35)}
+.intro .label{color:var(--nmuted)}
+.intro h1{font-size:clamp(40px,7vw,88px);font-weight:300;margin-top:14px}
+.intro h1 em{color:var(--nem)}
+.who{display:flex;align-items:center;gap:18px;margin-top:30px;flex-wrap:wrap}
+.who img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid rgba(180,232,200,.55)}
+.who b{display:block;font-weight:500}
+.who span{color:var(--nmuted);font-size:15px}
+.who .pill{margin-left:auto}
+@media (max-width:640px){.who .pill{margin-left:0}}
+
+.reel-main{margin-top:calc(-1 * clamp(90px,11vw,140px));position:relative;z-index:1}
+.films{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2.4vw,28px);margin-top:clamp(28px,4vw,48px)}
+@media (max-width:900px){.films{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.films{grid-template-columns:1fr}}
+.film{display:grid;gap:10px;margin:0}
+.screen{--fc:var(--c2);position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;border:1.5px solid rgba(255,255,255,.6);box-shadow:0 14px 34px rgba(16,38,28,.18);cursor:pointer;
+  background:radial-gradient(120% 90% at 20% 10%,color-mix(in srgb,var(--fc) 70%,white),transparent 60%),linear-gradient(160deg,color-mix(in srgb,var(--fc) 75%,var(--ink)),color-mix(in srgb,var(--fc) 30%,var(--ink)));
+  transition:transform .35s cubic-bezier(.3,1.4,.5,1),box-shadow .35s}
+.screen:hover,.screen:focus-visible{transform:translateY(-4px);box-shadow:0 22px 44px rgba(16,38,28,.26)}
+.screen:focus-visible{outline:2px solid var(--em);outline-offset:3px}
+.screen img,.screen iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
+.screen .play{position:absolute;left:50%;top:50%;width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.9);box-shadow:0 8px 24px rgba(0,0,0,.25);transition:transform .25s}
+.screen:hover .play{transform:scale(1.08)}
+.screen .play svg{width:20px;height:20px;fill:var(--ink);margin-left:3px}
+.screen.on{cursor:default}.screen.on .play,.screen.on img{display:none}
+.reel-main .screen{border-radius:22px}
+.reel-main .screen .play{width:76px;height:76px;margin:-38px 0 0 -38px}
+.film figcaption{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.film figcaption b{font-weight:500;font-size:16px}
+.film figcaption span{font:500 10.5px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+
+.back{display:flex;justify-content:center;padding:clamp(60px,8vw,100px) 0}
+footer{padding-block:40px;font-size:14px;color:rgba(255,255,255,.72);background:color-mix(in srgb,var(--c2) 50%,var(--ink))}
+footer a{color:#fff;text-underline-offset:3px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (prefers-reduced-motion:reduce){.screen,.screen .play{transition:none}}
+</style>
+
+<header class="top">
+  <div class="bar">
+    <a class="logo" href="/">aistronauts</a>
+    <nav class="nav"><a href="/">Studio</a><a href="/films" aria-current="page">Films</a></nav>
+    <div class="lang" role="group" aria-label="Language"><button type="button" data-l="en" aria-pressed="true">EN</button><button type="button" data-l="de" aria-pressed="false">DE</button></div>
+    <a class="pill solid" href="/#call">Book a call</a>
+  </div>
+</header>
+
+<main>
+  <section class="intro">
+    <div class="wrap">
+      <span class="label">Films</span>
+      <h1>Every film, <em>one place.</em></h1>
+      <div class="who">
+        <img src="assets/jakob.jpg" alt="Jakob Schweighardt" width="64" height="64">
+        <div><b>Jakob Schweighardt</b><span>AI Creative Producer · Ex-ElevenLabs · 15 years of industry experience</span></div>
+        <a class="pill light" href="/">Back to the studio</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap reel-main" aria-label="Showreel">
+    <figure class="film" id="feature"></figure>
+  </section>
+
+  <section class="wrap" aria-label="All films">
+    <div class="films" id="films"></div>
+  </section>
+
+  <div class="back wrap"><a class="pill solid" href="/#call">Book a call</a></div>
+</main>
+
+<footer><div class="wrap"><span>aistronauts · AI-native creative studio for climate solutions</span><span>aistronauts is part of <a href="https://www.oteloegen.at" target="_blank" rel="noopener">OTELO eGen</a> · <a href="/#legal">Legal notice &amp; privacy</a></span></div></footer>
+
+<script>
+(function(){
+  /* id, title, kind; the first entry is the showreel. Titles as on the old site, cleaned up. */
+  var FILMS=[
+    ['1229552326','Showreel 2026','Showreel'],
+    ['1229252064','Leila Pro','Launch film'],
+    ['1097469914','Samsung QLED',''],
+    ['1147358163','Why Noa',''],
+    ['1147358162','Willi','Explainer'],
+    ['1147355509','AI is growing up',''],
+    ['1056699602','Schachinger','Sustainability report'],
+    ['998678009','Rabenmutter',''],
+    ['1054823375','Greenpeace','Spec ad'],
+    ['917940396','There is no Planet B','Book trailer'],
+    ['1147503848','Pioneers of Recovery',''],
+    ['994960303','Shimano','Spec ad'],
+    ['999581102','Bravia · Color like no other',''],
+    ['1047634597','Allianz','Spec ad'],
+    ['1054827207','Bose','Spec ad'],
+    ['1056910244','Samsung','Spec ad'],
+    ['1012750800','Culture Pop Soda','A taste not from this world'],
+    ['987199086','Gelato Haven',''],
+    ['944744334','Why Bookbird?',''],
+    ['1147357553','Visual Hooks',''],
+    ['1016141992','aistronauts showreel','Earlier reel']
+  ];
+  /* local posters exist for the eight carousel films; the rest ask Vimeo for a thumbnail */
+  var POSTER={'1229552326':1,'1229252064':1,'1097469914':1,'1147358163':1,'1147358162':1,'1147355509':1,'1056699602':1,'998678009':1};
+  var KIND_DE={'Showreel':'Showreel','Launch film':'Launchfilm','Explainer':'Erklärvideo','Sustainability report':'Nachhaltigkeitsbericht','Spec ad':'Spec Ad','Book trailer':'Buchtrailer','Earlier reel':'Früheres Reel','A taste not from this world':'A taste not from this world'};
+  var PLAY='<span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5l12 7.5-12 7.5z"/></svg></span>';
+  var COLORS=['var(--c2)','var(--c1)','var(--c3)'];
+
+  function card(f,i){
+    var el=document.createElement('figure');el.className='film';
+    el.innerHTML='<div class="screen" role="button" tabindex="0" style="--fc:'+COLORS[i%3]+'" data-v="'+f[0]+'" aria-label="Play '+f[1]+'">'+
+      (POSTER[f[0]]?'<img alt="" loading="lazy" src="films/'+f[0]+'.jpg">':'')+PLAY+'</div>'+
+      '<figcaption><b>'+f[1]+'</b><span data-kind="'+f[2]+'">'+f[2]+'</span></figcaption>';
+    return el;
+  }
+  var feat=document.getElementById('feature'),grid=document.getElementById('films');
+  var f0=card(FILMS[0],0);feat.innerHTML=f0.innerHTML;
+  FILMS.slice(1).forEach(function(f,i){grid.appendChild(card(f,i+1))});
+
+  /* thumbnails for films without a local poster, fetched only when the card comes near */
+  function thumb(s){
+    if(s.querySelector('img'))return;
+    fetch('https://vimeo.com/api/oembed.json?width=640&url='+encodeURIComponent('https://vimeo.com/'+s.dataset.v))
+      .then(function(r){return r.ok?r.json():null}).then(function(d){
+        if(!d||!d.thumbnail_url||s.classList.contains('on'))return;
+        var im=new Image();im.alt='';im.src=d.thumbnail_url.replace(/_\d+x\d+/,'_640x360');
+        s.insertBefore(im,s.firstChild)}).catch(function(){});
+  }
+  var screens=[].slice.call(document.querySelectorAll('.screen'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){thumb(e.target);io.unobserve(e.target)}})},{rootMargin:'300px 0px'});
+    screens.forEach(function(s){io.observe(s)});
+  }else screens.forEach(thumb);
+
+  /* click plays the film in place with sound */
+  function play(s){
+    if(s.classList.contains('on'))return;
+    s.classList.add('on');s.removeAttribute('role');s.removeAttribute('tabindex');
+    var fr=document.createElement('iframe');
+    fr.src='https://player.vimeo.com/video/'+s.dataset.v+'?autoplay=1&dnt=1&title=0&byline=0&portrait=0';
+    fr.allow='autoplay; fullscreen; picture-in-picture';fr.allowFullscreen=true;
+    fr.title=s.parentNode.querySelector('figcaption b').textContent;
+    s.appendChild(fr);
+  }
+  screens.forEach(function(s){
+    s.addEventListener('click',function(){play(s)});
+    s.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();play(s)}});
+  });
+
+  /* language, shared with the main page */
+  var DE={
+    'Studio':'Studio','Films':'Filme','Book a call':'Gespräch buchen',
+    'Every film, <em>one place.</em>':'Alle Filme, <em>an einem Ort.</em>',
+    'AI Creative Producer · Ex-ElevenLabs · 15 years of industry experience':'AI Creative Producer · Ex-ElevenLabs · 15 Jahre Branchenerfahrung',
+    'Back to the studio':'Zurück zum Studio',
+    'aistronauts · AI-native creative studio for climate solutions':'aistronauts · KI-natives Creative Studio für Klimalösungen',
+    'aistronauts is part of <a href="https://www.oteloegen.at" target="_blank" rel="noopener">OTELO eGen</a> · <a href="/#legal">Legal notice &amp; privacy</a>':'aistronauts ist Teil der <a href="https://www.oteloegen.at" target="_blank" rel="noopener">OTELO eGen</a> · <a href="/#legal">Impressum &amp; Datenschutz</a>'
+  };
+  var LANG=(function(){var s=null;try{s=localStorage.getItem('lang')}catch(e){}
+    if(s==='de'||s==='en')return s;var l=navigator.languages||[navigator.language||''];
+    return l.some(function(x){return /^de\b/i.test(x||'')})?'de':'en'})();
+  var items=[];
+  [].forEach.call(document.querySelectorAll('.nav a, .top .pill, .intro h1, .intro .label, .who span, .who .pill, .back .pill, footer .wrap>span'),function(el){var en=el.innerHTML.trim();if(DE[en])items.push({el:el,en:en})});
+  function setLang(l){
+    LANG=l==='de'?'de':'en';document.documentElement.lang=LANG;
+    items.forEach(function(o){o.el.innerHTML=LANG==='de'?DE[o.en]:o.en});
+    [].forEach.call(document.querySelectorAll('[data-kind]'),function(k){var en=k.dataset.kind;k.textContent=LANG==='de'&&KIND_DE[en]?KIND_DE[en]:en});
+    [].forEach.call(document.querySelectorAll('.lang button'),function(b){b.setAttribute('aria-pressed',String(b.dataset.l===LANG))});
+  }
+  [].forEach.call(document.querySelectorAll('.lang button'),function(b){b.addEventListener('click',function(){try{localStorage.setItem('lang',b.dataset.l)}catch(e){}setLang(b.dataset.l)})});
+  setLang(LANG);
+})();
+</script>
+</html>
