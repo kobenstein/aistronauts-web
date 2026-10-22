@@ -156,8 +156,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     ['1147357553','Visual Hooks',''],
     ['1016141992','aistronauts showreel','Earlier reel']
   ];
-  /* local posters exist for the eight carousel films; the rest ask Vimeo for a thumbnail */
-  var POSTER={'1229552326':1,'1229252064':1,'1097469914':1,'1147358163':1,'1147358162':1,'1147355509':1,'1056699602':1,'998678009':1};
   var KIND_DE={'Showreel':'Showreel','Launch film':'Launchfilm','Explainer':'Erklärvideo','Sustainability report':'Nachhaltigkeitsbericht','Spec ad':'Spec Ad','Book trailer':'Buchtrailer','Earlier reel':'Früheres Reel','A taste not from this world':'A taste not from this world'};
   var PLAY='<span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5l12 7.5-12 7.5z"/></svg></span>';
   var COLORS=['var(--c2)','var(--c1)','var(--c3)'];
@@ -165,7 +163,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   function card(f,i){
     var el=document.createElement('figure');el.className='film';
     el.innerHTML='<div class="screen" role="button" tabindex="0" style="--fc:'+COLORS[i%3]+'" data-v="'+f[0]+'" aria-label="Play '+f[1]+'">'+
-      (POSTER[f[0]]?'<img alt="" loading="lazy" src="films/'+f[0]+'.jpg">':'')+PLAY+'</div>'+
+      '<img alt="" loading="'+(i?'lazy':'eager')+'" src="thumbs/'+f[0]+'.jpg">'+PLAY+'</div>'+
       '<figcaption><b>'+f[1]+'</b><span data-kind="'+f[2]+'">'+f[2]+'</span></figcaption>';
     return el;
   }
@@ -173,20 +171,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   var f0=card(FILMS[0],0);feat.innerHTML=f0.innerHTML;
   FILMS.slice(1).forEach(function(f,i){grid.appendChild(card(f,i+1))});
 
-  /* thumbnails for films without a local poster, fetched only when the card comes near */
-  function thumb(s){
-    if(s.querySelector('img'))return;
-    fetch('https://vimeo.com/api/oembed.json?width=640&url='+encodeURIComponent('https://vimeo.com/'+s.dataset.v))
-      .then(function(r){return r.ok?r.json():null}).then(function(d){
-        if(!d||!d.thumbnail_url||s.classList.contains('on'))return;
-        var im=new Image();im.alt='';im.src=d.thumbnail_url.replace(/_\d+x\d+/,'_640x360');
-        s.insertBefore(im,s.firstChild)}).catch(function(){});
-  }
   var screens=[].slice.call(document.querySelectorAll('.screen'));
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){thumb(e.target);io.unobserve(e.target)}})},{rootMargin:'300px 0px'});
-    screens.forEach(function(s){io.observe(s)});
-  }else screens.forEach(thumb);
 
   /* click plays the film in place with sound */
   function play(s){
