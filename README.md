@@ -1,6 +1,6 @@
 # aistronauts.at
 
-Static landing page for aistronauts, an AI-native creative studio for climate solutions.
+Static landing page for aistronauts, an AI-native film studio for climate solutions.
 
 - `index.html` – the whole page (styles and scripts inline), English and German
 - `assets/` – astronaut illustrations, portrait, favicon, link preview image
