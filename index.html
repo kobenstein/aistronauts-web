@@ -210,6 +210,16 @@ header,main,footer{position:relative;z-index:1}
 .avs{display:flex}
 .avs img{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid var(--bg);box-shadow:0 6px 16px rgba(16,38,28,.14);background:color-mix(in srgb,var(--c2) 22%,white)}
 .avs img+img{margin-left:-12px}
+/* Who's behind it: Jakob and Pascal side by side, same size */
+.duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(18px,2.4vw,30px);width:100%;margin-top:6px}
+.person{display:grid;gap:4px;justify-items:start;align-content:start}
+.person .portrait{width:clamp(92px,9vw,120px);margin-bottom:12px}
+.person .portrait.p2{background:linear-gradient(150deg,var(--c1),var(--c2))}
+.person h3{font-size:clamp(20px,1.9vw,25px)!important;line-height:1.1}
+.person .role{font:500 14.5px/1.3 var(--f-body);color:var(--em)}
+.person .meta{margin-top:2px!important;font-size:14px!important;gap:4px 12px!important}
+.person .links{display:flex;gap:14px;margin-top:6px}
+@media (max-width:420px){.duo{gap:14px}.person h3{font-size:18px!important}.person .role{font-size:13.5px}.person .links{flex-direction:column;gap:6px}}
 .adv{display:flex;align-items:center;gap:12px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-size:14.5px;color:var(--muted)}
 .adv img{width:40px;height:40px;border-radius:50%;object-fit:cover;flex:none}
 .adv b{color:var(--ink);font-weight:600}
@@ -387,7 +397,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <div class="runner" id="runner" aria-hidden="true"><span id="runV">v1</span><i><b id="runBar"></b></i><em class="ok">&#10003;</em><s class="ghost sq"></s><s class="ghost wd"></s></div>
       <div class="pc" data-for="0" aria-hidden="true"><img data-from=".portrait" alt=""><span><b>Jakob Schweighardt</b><i>Founder &amp; Creative Director</i></span></div>
       <div class="pc" data-for="1" aria-hidden="true"><img class="astro" data-from=".astro-fly img" alt=""><span><b>Aistronaut</b><i>Our AI crew</i></span></div>
-      <div class="pc" data-for="2" aria-hidden="true"><img src="assets/pascal.jpg" alt=""><span><b>Pascal Langendorf</b><i>Advisor · Ex-Google</i></span></div>
+      <div class="pc" data-for="2" aria-hidden="true"><img src="assets/pascal.jpg" alt=""><span><b>Pascal Langendorf</b><i>Performance Partner · Ex-Google</i></span></div>
       <div class="lcenter"><span class="label">Round</span><b id="round">1</b><span class="lsmall">Every creative better than the last</span></div>
     </div>
     <p class="tagline">We don’t just explain climate solutions. <em>We make them felt.</em></p>
@@ -427,14 +437,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <section class="sec wrap" id="about">
     <div class="founder">
       <div class="who">
-      <img class="portrait" src="assets/jakob.jpg" alt="Jakob Schweighardt" width="160" height="160">
-      <div>
         <span class="label">Who's behind it</span>
-        <h3 style="margin-top:10px">Jakob Schweighardt</h3>
-        <div class="meta"><span>AI Creative Producer</span><span>Ex-ElevenLabs</span><span>15 years of industry experience</span></div>
-        <div class="row"><a class="pill" href="/portfolio">See all films →</a><a class="tl" href="https://www.linkedin.com/in/kobenstein/" target="_blank" rel="noopener">LinkedIn</a><a class="tl" href="mailto:jakob@aistronauts.at">jakob@aistronauts.at</a></div>
-        <div class="adv"><img data-from='.pc[data-for="2"] img' alt=""><span>With <b>Pascal Langendorf</b><i>Advisor for performance · Ex-Google</i></span></div>
-      </div>
+        <div class="duo">
+          <div class="person"><img class="portrait" src="assets/jakob.jpg" alt="Jakob Schweighardt" width="160" height="160">
+            <h3>Jakob Schweighardt</h3><b class="role">Founder &amp; Creative Director</b>
+            <div class="meta"><span>Ex-ElevenLabs</span><span>15 years of industry experience</span></div>
+            <div class="links"><a class="tl" href="https://www.linkedin.com/in/kobenstein/" target="_blank" rel="noopener">LinkedIn</a><a class="tl" href="mailto:jakob@aistronauts.at">jakob@aistronauts.at</a></div></div>
+          <div class="person"><img class="portrait p2" src="assets/pascal.jpg" alt="Pascal Langendorf" width="160" height="160">
+            <h3>Pascal Langendorf</h3><b class="role">Performance Partner</b>
+            <div class="meta"><span>Ex-Google</span></div></div>
+        </div>
+        <div class="row"><a class="pill" href="/portfolio">See all films →</a></div>
       </div>
 
       <div class="reel" id="reel" aria-label="Selected films">
