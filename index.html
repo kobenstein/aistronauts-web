@@ -224,13 +224,18 @@ header,main,footer{position:relative;z-index:1}
 .avs img+img{margin-left:-12px}
 /* What we deliver: one wide pill button that folds out */
 .more{border-top:0}
-.more summary{padding:10px 10px 10px 22px;border-radius:999px;background:rgba(255,255,255,.55);border:1.5px solid var(--ink);box-shadow:0 6px 18px rgba(16,38,28,.08);transition:background .25s,box-shadow .25s,transform .25s}
-.more summary:hover{background:#fff;box-shadow:0 10px 26px rgba(16,38,28,.14);transform:translateY(-1px)}
-.more[open] summary{background:#fff}
+.more summary{padding:10px 10px 10px 22px;border-radius:999px;background:rgba(16,38,28,.035);border:1.5px solid var(--ink);box-shadow:none;transition:background .25s,box-shadow .25s,transform .25s}
+.more summary:hover{background:rgba(16,38,28,.07);transform:translateY(-1px)}
+.more[open] summary{background:rgba(16,38,28,.06)}
 .more summary>span{font-size:12.5px}
 .more .hint{margin-right:4px}
 .more summary:hover .hint{text-decoration:none}
 .more summary::after{width:38px;height:38px;font-size:20px}
+/* quieter than the call button: soft outline, green plus */
+.more summary{border:1px solid color-mix(in srgb,var(--em) 45%,transparent)}
+.more summary:hover{border-color:var(--em)}
+.more:not([open]) summary::after,.more summary::after{background:color-mix(in srgb,var(--em) 12%,transparent);color:var(--em);border-color:transparent}
+.more summary:hover::after,.more summary:focus-visible::after{background:var(--em);color:#fff;border-color:var(--em)}
 @media (max-width:560px){.more summary{padding:12px 10px 12px 20px;border-radius:24px}}
 /* Who's behind it: Jakob with his films, Pascal in his own card of the same weight */
 .single{margin:22px 0 0;font-size:15.5px;line-height:1.5;color:var(--muted)}
