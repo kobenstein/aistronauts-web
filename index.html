@@ -259,6 +259,12 @@ header,main,footer{position:relative;z-index:1}
 .founder.partner .who{align-self:center}
 @media (max-width:640px){.reel-lbl{left:14%;top:6px}
 .founder.partner{grid-template-columns:1fr}}
+/* Film reel: portrait cards (9:16, cropped), logo cards stay landscape */
+.film:not(.lgc){width:clamp(118px,11vw,152px);aspect-ratio:9/16}
+.film:not(.lgc) video{object-fit:cover;object-position:center}
+#reel{height:clamp(330px,31vw,410px)}
+#reel .film.lgc{width:clamp(150px,14vw,190px)}
+@media (max-width:640px){.film:not(.lgc){width:30vw}#reel{height:clamp(300px,82vw,360px)}#reel .film.lgc{width:40vw}}
 /* Who's behind it: Jakob with his films, Pascal in his own card of the same weight */
 .single{margin:22px 0 0;font-size:15.5px;line-height:1.5;color:var(--muted)}
 .single span:first-child{color:var(--ink);font-weight:500}
